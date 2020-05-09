@@ -59,5 +59,4 @@ def has_palindrome_permutation(the_string):
     # has one or zero characters without a pair
     return len(unpaired_characters) <= 1
 
-# My other idea was a similar solution to this one, except it has the same problems with letters that are repeated more than once.
-# I do not feel like this is a comprehensive solution. 
+# I had another idea so close to this!!! Noooooo!!! :)
