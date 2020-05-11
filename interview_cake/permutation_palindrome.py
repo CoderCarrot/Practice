@@ -20,10 +20,10 @@
 def has_palindrome_permutation(the_string):
 
     # Check if any permutation of the input is a palindrome
-    
+
     letter_count_1 = {}
     letter_count_2 = {}
-    
+
     for letter in the_string:
         if letter in letter_count_1:
             if letter in letter_count_2:
