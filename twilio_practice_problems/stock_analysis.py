@@ -148,7 +148,7 @@ def compute_parameter_value2(*sources):
 
 print(compute_parameter_value2(['P1:a', 'P3:b', 'P5:x'], ['P1:b', 'P2:q', 'P5:x']))
 
-# Time Complexity: O(n*m^2) where n is number of sources and m is number of parameters per source. Either way, it's gross.
+# Time Complexity: O(n*m) where n is number of sources and m is number of parameters per source. Either way, it's gross.
 # Since dictionaries in python are now ordered, I don't actually need the order_seen list.
 #   I could also just print the values for each key in the dictionaty instead of putting them in a list to then return.
 #   Although this depends on the format desired for output.

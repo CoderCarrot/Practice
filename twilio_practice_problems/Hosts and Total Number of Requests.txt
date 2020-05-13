@@ -15,7 +15,8 @@ Each line contains a single log record with the following columns (in order):
     The HTTP response code.
     The total number of bytes sent in the response.
 
-Function Description: Your function must create a unique list of hostnames with their number of requests and output to a file names records_filename where filename is names records_filename where filename is replaced with input filename.
+Function Description: Your function must create a unique list of hostnames with their number of requests and output to a 
+file named records_filename where filename is replaced with input filename.
 Each hostname should be followed by a space then the number of requests and a newline.
 Order doesn't matter.
 
@@ -44,3 +45,28 @@ Constraints:
      d104.aa.net - - [01/JUL/1995:00:00:15 - 0400] "GET /shuttle/countdown/ HTTP/1.0" 200 40310 
      d104.aa.net - - [01/JUL/1995:00:00:15 - 0400] "GET /images/NASA-logosmall.gif HTTP/1.0" 200 786 
 
+def find_number_of_requests(file):
+
+    log_file = open(file)
+
+    number_of_requests = {}
+
+    for line in log_file:
+        parsed_line = line.split(' ')
+        host_name = parsed_line[0]
+
+        if host_name not in number_of_requests:
+            number_of_requests[host_name] = 1
+        else:
+            number_of_requests[host_name] += 1
+    
+    output_file = open('records_{}'.format(file), w)
+    for host, request_number in number_of_requests.items():
+        output_file.write(host, ' ', request_number)
+        output_file.write('/n')
+    output_file.close()
+    log_file.close()
+
+    return None
+
+Time: 20 mins
